@@ -1,0 +1,25 @@
+{
+  "short_name": "Pet Heaven",
+  "name": "Create Pet Heaven Sample",
+  "icons": [
+    {
+      "src": "Pet Heaven.jpg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/jpg"
+    },
+    {
+      "src": "Pet Heaven.jpg",
+      "type": "image/jpg",
+      "sizes": "200x200"
+    },
+    {
+      "src": "Pet Heaven.jpg",
+      "type": "image/jpg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

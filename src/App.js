@@ -1,0 +1,34 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
+import { dogs, cats } from './data.js'
+import Home from './pages/Home'
+import Pets from './components/Pets'
+import About from './pages/About'
+import PetCareTips from './components/PetCareTips'
+import Login from './components/LoginSignup'
+import Adopt from './components/AdoptPetForm'
+import ReleasePet from './components/ReleasePetForm'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+
+function App() {
+  // global pet state
+  const [petList, setPetList] = useState([...dogs, ...cats])
+
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home petList={petList} />} />
+        <Route path="/pets" element={<Pets petList={petList} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/caretips" element={<PetCareTips />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/adopt" element={<Adopt petList={petList} />} />
+        <Route path="/release" element={<ReleasePet petList={petList} setPetList={setPetList} />} />
+      </Routes>
+      <Footer />
+    </Router>
+  )
+}
+export default App

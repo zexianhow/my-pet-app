@@ -1,0 +1,78 @@
+.container { 
+  max-width:1100px; 
+  margin:0 auto; 
+  padding:20px; 
+}
+.navbar { 
+  display:flex; 
+  gap:16px; 
+  padding:16px; 
+  background:#227777; 
+  flex-wrap:wrap;
+  justify-content: center; 
+  align-items: center;    
+}
+
+.navbar a { 
+  color:white; 
+  text-decoration:none;
+  font-size: 18px; 
+}
+
+.logo-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%; 
+  object-fit: cover;
+}
+
+.form-card, .pet-card { 
+  padding:20px; 
+  border-radius:12px; 
+  box-shadow:0 2px 8px #0002; 
+  margin:16px; 
+  transition: all 0.3s ease; 
+}
+.pet-card:hover { 
+  transform: translateY(-6px); 
+}
+.pet-card-img {
+  width: 50%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.page { 
+  animation: fadeIn 0.5s ease; 
+}
+@keyframes fadeIn { 
+  from {opacity:0;} to {opacity:1;} 
+}
+.pet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+img {
+  width: 70%;
+  border-radius: 8px;
+}
+input, select, textarea {
+  display:block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+button {
+  padding: 10px 16px;
+  cursor: pointer;
+  background: #227777;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+button:hover {
+  background: #185555;
+  transition: 0.2s;
+}
