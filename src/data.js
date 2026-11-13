@@ -41,12 +41,12 @@ export const cats = [
 export const reviews = [
   {
     name: "Amy",
-    comment: "I adopted my cat Luna here, the process is smooth and staff are friendly.",
+    comment: "I adopted my pet Luna here, the process is smooth and staff are friendly.",
     avatar: require("./amy.jpg")
   },
   {
     name: "John",
-    comment: "Great experience! I found my lovely dog quickly.",
+    comment: "Great experience! I found my lovely pet quickly.",
     avatar: require("./john.jpg")
   },
   {
