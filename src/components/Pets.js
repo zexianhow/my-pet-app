@@ -2,6 +2,7 @@ import goldenRetriver from "../goldenRetriver.jpg";
 import corgi from "../corgi.jpg";
 import britishShortHair from "../britishShortHair.jpg";
 import MaineCoon from "../MaineCoon.jpg";
+import { Link } from "react-router-dom";
 
 const pets = [
   {
@@ -71,7 +72,20 @@ export default function Pets() {
             <p>Breed: {pet.breed}</p>
             <p>Age: {pet.age}</p>
             <p>{pet.desc}</p>
-            <p><strong>Status: {pet.status}</strong></p>
+            <p><strong>Status: Available</strong></p>
+            {/* New button go to adopt page */}
+            <Link to="/adopt">
+              <button style={{
+                padding:"8px 16px",
+                backgroundColor:"#2196f3",
+                color:"white",
+                border:"none",
+                borderRadius:"4px",
+                cursor:"pointer"
+              }}>
+                Adopt This Pet
+              </button>
+            </Link>
           </div>
         ))}
       </div>

@@ -1,13 +1,38 @@
 import { reviews } from "../data.js";
+import { Link } from 'react-router-dom';
+
 export default function Home({ petList }) {
   return (
     <div style={{ padding: "24px" }}>
       <h1>Welcome to Pet Heaven</h1>
       <p>We help homeless dogs and cats find loving homes.</p>
-      <div style={{ background: "#f7f7f7", padding: "24px", borderRadius: "16px", margin: "24px 0" }}>
-        <h2>What we do</h2>
-        <p>Browse pets, apply for adoption or surrender a pet to our centre.</p>
+      <div style={{
+        backgroundImage: "url(/bg.jpg)",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        minHeight: "400px",
+        padding: "60px 24px",
+        color: "white",
+        borderRadius: "16px",
+        position: "relative",
+        overflow: "hidden"
+      }}>
+        <div style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "rgba(0,0,0,0.2)",
+          zIndex: 2
+        }}></div>
+        <div style={{ position: "relative", zIndex: 2, textAlign: "center", fontSize: "30px" }}>
+          <h2>What we do</h2>
+          <p>Browse pets, apply for adoption or surrender a pet to our centre.</p>
+        </div>
       </div>
+
       <div style={{ margin: "40px 0" }}>
         <h2>Meet Our Available Pets</h2>
         <div style={{ display: "grid", gap: "20px", gridTemplateColumns: "repeat(auto-fit, minmax(240px,1fr))" }}>
@@ -19,6 +44,21 @@ export default function Home({ petList }) {
               <p>Age: {pet.age}</p>
               <p>{pet.desc}</p>
               <p><strong>Status: {pet.status}</strong></p>
+              <div style={{textAlign:"center", marginTop:"30px"}}>
+              <Link to="/pets">
+                <button style={{
+                  padding: "10px 24px",
+                  backgroundColor: "#227777",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "6px",
+                  fontSize: "16px",
+                  cursor: "pointer"
+                }}>
+                  View All Pets
+                </button>
+              </Link>
+              </div>
             </div>
           ))}
         </div>
