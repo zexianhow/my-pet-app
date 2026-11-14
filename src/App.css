@@ -32,6 +32,7 @@
   box-shadow:0 2px 8px #0002; 
   margin:16px; 
   transition: all 0.3s ease; 
+  background: #f7f7f7;
 }
 .pet-card:hover { 
   transform: translateY(-6px); 
