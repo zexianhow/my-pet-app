@@ -15,6 +15,15 @@ function App() {
   // global pet state
   const [petList, setPetList] = useState([...dogs, ...cats])
 
+  const markPetAsAdopted = (selectedPetId) => {
+    setPetList(prevList => prevList.map(pet => {
+      if (pet.id === selectedPetId) {
+        return { ...pet, status: "Adopted" }
+      }
+      return pet;
+    }))
+  }
+
   return (
     <Router>
       <Navbar />
@@ -23,9 +32,9 @@ function App() {
         <Route path="/pets" element={<Pets petList={petList} />} />
         <Route path="/about" element={<About />} />
         <Route path="/caretips" element={<PetCareTips />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/adopt" element={<Adopt petList={petList} />} />
+        <Route path="/adopt" element={<Adopt petList={petList} markPetAsAdopted={markPetAsAdopted} />} />
         <Route path="/release" element={<ReleasePet petList={petList} setPetList={setPetList} />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </Router>

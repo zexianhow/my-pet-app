@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { sampleAdoptForm } from "../data.js";
 
-export default function Adopt({ petList }) {
+export default function Adopt({ petList, markPetAsAdopted }) {
   const [form, setForm] = useState(sampleAdoptForm);
   const navigate = useNavigate();
 
@@ -13,7 +13,13 @@ export default function Adopt({ petList }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Adoption application submitted successfully!");
+    if (!form.selectedPet) return alert("Please select a pet");
+
+    const chosenPet = petList.find(pet => pet.name === form.selectedPet);
+    if (!chosenPet) return alert("Selected pet not found");
+    markPetAsAdopted(chosenPet.id);
+
+    alert("Adoption application submitted! Pet marked as Adopted.");
     navigate("/");
   };
 
